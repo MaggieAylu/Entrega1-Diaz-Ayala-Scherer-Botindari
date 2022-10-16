@@ -3,6 +3,13 @@
     <header>
     <br />
     <h1 style="color:#00008B" class="text-center">Lista de productos</h1>
+
+    <form action={% url 'pedido' %} method="GET">
+    
+        {{ formulario1 }}
+        
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
     
     </header>
 
