@@ -1,0 +1,29 @@
+<body>
+
+    <header>
+    <br />
+    <h1 style="color:#00008B" class="text-center">Lista de productos</h1>
+    
+    </header>
+
+    <section class="text-center">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Tipo de producto</th>
+                    <th scope="col">Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pedido in pedido %}
+                <tr>
+                    <td style="color:rgb(6, 28, 48)">{{pedido.nombre}}</td>
+                    <td style="color:rgb(6, 28, 48)">{{pedido.tipo_de_producto}}</td>
+                    <td style="color:rgb(6, 28, 48)">{{pedido.precio}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</body>
