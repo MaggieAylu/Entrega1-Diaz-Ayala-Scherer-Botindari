@@ -27,13 +27,17 @@
                 </tr>
             </thead>
             <tbody>
-                {% for pedido in pedido %}
-                <tr>
-                    <td style="color:rgb(6, 28, 48)">{{pedido.nombre}}</td>
-                    <td style="color:rgb(6, 28, 48)">{{pedido.tipo_de_producto}}</td>
-                    <td style="color:rgb(6, 28, 48)">{{pedido.precio}}</td>
-                </tr>
-                {% endfor %}
+                {% if pedido %}
+                    {% for pedido in pedido %}
+                    <tr>
+                        <td style="color:white">{{pedido.nombre}}</td>
+                        <td style="color:white">{{pedido.tipo_de_producto}}</td>
+                        <td style="color:white">{{pedido.precio}}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <p><font color='white'> No hay productos cargados hasta el momento </font></p>
+                {% endif %}
             </tbody>
         </table>
     </section>
