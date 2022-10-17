@@ -11,6 +11,7 @@ def Home(request):
 def AboutUs(request):
     return render(request, 'Producto/AboutUs.html',{})
 
+
 #Cargar productos por medio de formulario
 def CargarProducto(request):
     if request.method == "POST":
