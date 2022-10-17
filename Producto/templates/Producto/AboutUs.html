@@ -1,11 +1,110 @@
-{% extends "Producto/layout.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Nosotros</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .About-us {
+	  width: 100%;
+	  text-align: center;
+	  background-color: #ccc;
+	  margin-top: 30px;
+	  margin-bottom: 30px;
+	}
+	h1{
+	  color: black;
+	  font-size: 35px;
+	}
+	img {
+	  border-radius: 50%;
+	}
+	
+	p {
+	  font-size: 20px;
+	} 
+    h3 {
+	  text-shadow:
+	}
+    a {
+      padding: 20px;
+	  text-align: center;
+	  text-decoration: none;
+	  margin: 5px 2px;
+	  background: #3B5998;
+      color: white;
+	  border-radius: 8px;
+	 font-size: 50px;
+	  
+   } 
+	 .column {
+	  float: left;
+	  width: 45%;
+	  margin-bottom: 16px;
+	  padding: 0 8px;
+	}
 
-{% block content %}  
-
+	.card {
+	  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+	  margin: 10px;
+	  background-color: white;
+	}
+	.card img {
+	   height: 100px;
+	}
+	
+</style>
+</head>
 <body>
-   <p> <a href="https://www.linkedin.com/in/lic-felix-ayala/" target="_blank"> Félix Ayala Linkedin </a> </p>
-   <p> <a href="https://www.linkedin.com/in/mariana-botindari-72b901181/" target="_blank"> Mariana Botindari Linkedin </a> </p>
-   <p> <a href="https://www.linkedin.com/in/melisa-scherer-01a89975/" target="_blank"> Melisa Scherer Linkedin </a> </p>
-   <p> <a href="https://www.linkedin.com/in/" target="_blank"> Maggie Linkedin </a> </p>
+  <div class="About-us">
+    <h1> Sobre Nosotros </h1>
+	<h3> Este blog está formado por personas con la motivación de concientizar sobre la importancia del cuidado del medio ambiente.</h3>
+	<div class="row">
+	  <div class="column">
+		<div class="card">
+		  <img src="https://scontent.fcrd1-2.fna.fbcdn.net/v/t1.6435-9/66224913_10219632640150856_7109603100444327936_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=174925&_nc_ohc=fSDKlWxhWxEAX_GaJ1E&_nc_ht=scontent.fcrd1-2.fna&oh=00_AT_OyWVc_lTqB8oSGLkYMlHu9h2V5NnvMOfUHTLRXg_DnA&oe=6374300A" style="width:30" "height:40">
+		  <div class="container">
+			<h2>Melisa Scherer</h2>
+			<p class="title">Estudiante de Python - Técnica Electromecánica
+			</p>
+			<a href="https://www.linkedin.com/in/melisa-scherer-01a89975/" class="fa fa-linkedin"></a>
+			<a href="https://www.instagram.com/melimscherer/" class="fa fa-instagram" > </a>
+		</div>
+		</div>
+	  </div>
+	  <div class="column">
+		<div class="card">
+			<img src="https://scontent.fcrd1-2.fna.fbcdn.net/v/t39.30808-6/295797583_10159207518692872_4389671045082819630_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=PwZ0kFZLsDMAX9fZ69z&_nc_ht=scontent.fcrd1-2.fna&oh=00_AT93HYmOiFseMa3Pjvp0bAhbRj7y_Q72HyDa5nZAgLDXpQ&oe=635228C1" style="width:30" "height:40">
+			<div class="container">
+			<h2>Mariana Botindari</h2>
+			<p class="title">Estudiante de Python</p>
+			<a href="https://www.linkedin.com/in/mariana-botindari-72b901181/" class="fa fa-linkedin"></a>
+			<a href="https://www.instagram.com/marianabotindari/" class="fa fa-instagram"></a>
+		</div>
+		</div>
+	  </div>
+	  <div class="column">
+		<div class="card">
+		  <img src="https://i.imgur.com/dc9C9fq.jpg" style="width:30" "height:40">
+		  <div class="container">
+			<h2>Magalí Díaz</h2>
+			<p class="title">Estudiante de Python</p>
+			<a href="https://www.instagram.com/_maga.diaz/"  class="fa fa-instagram"></a>
+		</div>
+		</div>
+	  </div>
+	 </div>
+	 <div class="column">
+		<div class="card">
+		  <img src="https://scontent.ffdo3-1.fna.fbcdn.net/v/t31.18172-8/19264637_10213534505181860_2189966584998819137_o.jpg?_nc_cat=101&ccb=1-7&_nc_sid=174925&_nc_eui2=AeEmqObZvH5oLszllJ-jH3awp3sODB3QpWmnew4MHdClaTRPOmHQSh1levuW9urp00Q&_nc_ohc=wLFRjPPf6EYAX95fnaG&_nc_ht=scontent.ffdo3-1.fna&oh=00_AT_BCf50WBey3sCUIQ-AOXOutP4Jpo9EI6WbbO8TvPi0mA&oe=6371CB35" style="width:40" "height:40">
+		  <div class="container">
+			<h2>Félix Ayala</h2>
+			<p class="title">Estudiante de Python</p>
+			<a href="https://www.linkedin.com/in/lic-felix-ayala/" class="fa fa-linkedin"></a>
+			<a href="https://www.instagram.com/felfa_/" class="fa fa-instagram"></a>
+		</div>
+		</div>
+	  </div>
+  </div>
 </body>
-{% endblock %}
+</html>
