@@ -24,15 +24,26 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Tipo de producto</th>
                     <th scope="col">Precio</th>
+                    <th scope="col">Opciones</th>
                 </tr>
             </thead>
             <tbody>
                 {% if pedido %}
                     {% for pedido in pedido %}
                     <tr>
-                        <td style="color:white">{{pedido.nombre}}</td>
+                        <td style="color:white">{{pedido.nombre}} </td>
                         <td style="color:white">{{pedido.tipo_de_producto}}</td>
-                        <td style="color:white">{{pedido.precio}}</td>
+                        <td style="color:white">{{pedido.precio}} </td>
+                        <td style="color:white">
+                            <style>    a {
+                          
+                                text-align: center;
+                                background: none;
+                                font-size: 15px;
+                                
+                             } </style>  <a href={% url 'eliminar_producto' pedido.id %}>Borrar</a>
+                            <a href={% url 'editar_producto' pedido.id %}>Editar</a>
+                        </td>
                     </tr>
                     {% endfor %}
                 {% else %}
