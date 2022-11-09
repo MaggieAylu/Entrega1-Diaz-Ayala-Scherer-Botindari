@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login as djlogin
-from cuentas.forms import FormularioRegistro, FormularioEditarPerfil
+from accounts.forms import FormularioRegistro, FormularioEditarPerfil
 from django.contrib.auth.decorators import login_required
 
 #Iniciar sesión
@@ -16,7 +16,7 @@ def login(request):
     else:
         formulario = AuthenticationForm()
     
-    return render(request, 'cuentas/login.html', {'formulario':formulario})
+    return render(request, 'accounts/login.html', {'formulario':formulario})
 
 #Registrarse
 def registrar(request):
@@ -28,13 +28,13 @@ def registrar(request):
     else:
         formulario = FormularioRegistro()
    
-    return render(request, 'cuentas/registrar.html', {'formulario':formulario})
+    return render(request, 'accounts/registrar.html', {'formulario':formulario})
 
 #Perfil de usuario
 @login_required
 def perfil(request):
     
-    return render(request, 'cuentas/perfil.html', {})
+    return render(request, 'accounts/perfil.html', {})
 
 #Editar Perfil
 @login_required
@@ -60,4 +60,4 @@ def editar_perfil(request):
                 'email': request.user.email
                 }
              )
-    return render(request, 'cuentas/editar_perfil.html', {'formulario':formulario})
+    return render(request, 'accounts/editar_perfil.html', {'formulario':formulario})
