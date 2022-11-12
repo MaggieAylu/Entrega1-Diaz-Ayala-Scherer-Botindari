@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Producto',
     'cuentas',
+    'chat',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
