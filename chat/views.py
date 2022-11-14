@@ -32,7 +32,7 @@ def chat_view(request):
         return redirect('login')
     if request.method == "GET":
         return render(request, 'chat/chat.html',
-                      {'user': User.objects.exclude(username=request.user.username)})
+                      {'user': User.objects.exclude(username=request)})
 
 
 def message_view(request, sender, receiver):
