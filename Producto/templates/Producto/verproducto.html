@@ -1,0 +1,35 @@
+{% extends "Producto/layout.html" %}
+
+
+{% block content %}  
+
+<section class="text-center">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="row justify-content-center">
+            <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 card card-default rounded-0 shadow">
+                <div class="card-header">
+                    <h4 class="card-title fw-bold"></h4>
+                </div>
+                <div class="card-body">
+                    <h4 class="fw-bolder mt-4 text-start">{{ pedido.nombre }}</h4>
+                    <hr>
+                    <div class="lh-1 text-start">
+                        
+                        <span class="me-5"><small>Autor: <b>{{ pedido.author }}</b></small></span>
+                        <span><small><i class="fa fa-calendar-day"></i> Publicado: <b>{{ pedido.date_added|date:"F d, Y h:i A" }}</b></small></span>
+
+                    </div>
+                    <div class="clear-fix py-3"></div>
+                    <div>{{ pedido.resumen|safe }}</div>
+                    <div>{{ pedido.blog_post|safe }}</div>
+
+                <a href="{% url 'eliminar_producto' pedido.id %}"class="btn btn-primary">Borrar</a>
+                <a href="{% url 'editar_producto' pedido.id %}"class="btn btn-primary">Editar</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

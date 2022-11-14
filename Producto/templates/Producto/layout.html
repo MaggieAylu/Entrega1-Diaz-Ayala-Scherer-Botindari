@@ -29,14 +29,14 @@ background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">Home</a>
-            <a class="navbar-brand" href="/producto">Cargar Producto</a>
             <a class="navbar-brand" href="/pedido">Listado de Productos</a>
             <a class="navbar-brand" href="/about">¿Quienes somos?</a>
             {% if request.user.is_authenticated %}
                 
-                <a class="navbar-brand" href={% url 'logout' %}>Cerrar Sesión</a>
+                <a class="navbar-brand" href="/producto">Cargar Producto</a>
                 <a class="navbar-brand" href={% url 'perfil' %}>{{ request.user.username }}</a>
-                <a class="navbar-brand" href={% url 'editar_perfil' %}></a>
+                <a class="navbar-brand" href={% url 'logout' %}>Cerrar Sesión</a>
+
             {% else %}
                 <a class="navbar-brand" href={% url 'login' %}>Iniciar Sesión</a>
                 <a class="navbar-brand" href={% url 'registrar' %}>Registrarse</a>

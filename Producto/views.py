@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect
 from Producto.models import PedidoProducto
 from Producto.forms import FormularioPedido, FomularioBusqueda
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 #Pagina de inicio
 def Home(request):
@@ -27,16 +28,22 @@ def CargarProducto(request):
             data = formulario.cleaned_data
             pedido = PedidoProducto(
             
-                 nombre = data["nombre"],
-                 tipo_de_producto = data["tipo_de_producto"],
-                 precio = data ["precio"]
+                nombre = data["nombre"],
+                author = data['author'],
+                resumen = data['resumen'],
+                blog_post = data['blog_post'],
+                banner = data['banner'],
+                status = data['status'],
+                date_added = data['date_added'],
             )
+            
             pedido.save()
             
             return redirect('pedido')
 
     formulario = FormularioPedido()  
     return render(request, 'Producto/PedidoProductos.html', {'formulario': formulario})
+
 
 #Ver lista de productos
 def VerPedido(request):
@@ -65,11 +72,21 @@ def EliminarProducto(request, id):
 class EditarProducto(LoginRequiredMixin,UpdateView):
     model = PedidoProducto
     success_url = '/Producto/listadepedido.html'
-    template_name = 'Producto/editar_producto.html'
-    fields = ['nombre','tipo_de_producto','precio']
+    template_name = 'Producto/editarproducto.html'
+    fields = ['nombre','author','resumen','blog_post','banner']
+
+
+context = {
+    'nombre' : 'Blog Site'}
+
+def view_post(request,pk=None):
+    context['nombre'] = ""
+    if pk is None:
+        messages.error(request,"Unabale to view Post")
+        return redirect('Home')
+    else:
+        post = PedidoProducto.objects.filter(id = pk).first()
+        context['nombre'] = post.nombre
+        context['pedido'] = post
+        return render(request, 'Producto/verproducto.html',context)
     
-# #Eliminar de la lista
-# class EliminarProducto(DeleteView):
-#     model = PedidoProducto
-#     success_url = '/Producto/listadepedido.html'
-#     template_name = 'Producto/eliminar_producto.html'

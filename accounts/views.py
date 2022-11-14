@@ -68,9 +68,9 @@ def editar_perfil(request):
                 'avatar': request.user.extensionusuario.avatar,
             }
         )
-    return render(request, 'cuentas/editar_perfil.html', {'formulario':formulario})
+    return render(request, 'accounts/editar_perfil.html', {'formulario':formulario})
 
 class CambiarContrasenia(LoginRequiredMixin, PasswordChangeView):
-    template_name = 'cuentas/cambiar_contrasenia.html'
-    success_url = '/cuentaspefil/'
+    template_name = 'accounts/cambiar_contrasenia.html'
+    success_url = '/accounts/pefil/'
     

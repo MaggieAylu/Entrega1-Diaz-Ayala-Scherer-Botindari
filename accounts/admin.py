@@ -1,5 +1,5 @@
 from django.contrib import admin
-from cuentas.models import ExtensionUsuario
+from accounts.models import ExtensionUsuario
 
 
 admin.site.register(ExtensionUsuario)

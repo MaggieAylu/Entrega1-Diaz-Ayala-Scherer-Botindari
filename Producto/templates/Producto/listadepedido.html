@@ -1,4 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+</head>
 {% extends "Producto/layout.html" %}
+
 
 {% block content %}  
 
@@ -17,34 +26,27 @@
     
     </header>
 
-    <section class="text-center">
-        <table class="table">
-            <thead class="table-dark">
-                <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Tipo de producto</th>
-                    <th scope="col">Precio</th>
-                    <th scope="col">Opciones</th>
-                </tr>
-            </thead>
-            <tbody>
+    <div class="row">
                 {% if pedido %}
                     {% for pedido in pedido %}
-                    <tr>
-                        <td style="color:white">{{pedido.nombre}} </td>
-                        <td style="color:white">{{pedido.tipo_de_producto}}</td>
-                        <td style="color:white">{{pedido.precio}} </td>
-                        <td style="color:white">
-                            <style>    a {
-                          
-                                text-align: center;
-                                background: none;
-                                font-size: 15px;
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card shadow border">
+                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ pedido.nombre }}</h5>
+                            <li>Autor: {{ pedido.author }}</li>
+                            <li>Fecha de creación: {{ pedido.date_added }}</li>
+                            <div>{{ pedido.resumen }}</div>
+                            <div class="card-text truncate-3">
+                                <a href="{% url 'view-post' pedido.id %}" class="btn btn-primary">VER</a>
+                            </div>
                                 
-                             } </style>  <a href={% url 'eliminar_producto' pedido.id %}>Borrar</a>
-                            <a href={% url 'editar_producto' pedido.id %}>Editar</a>
-                        </td>
-                    </tr>
+                            </div>
+                    </div>
+                </div>
+
                     {% endfor %}
                 {% else %}
                     <p><font color='white'> No hay productos cargados hasta el momento </font></p>

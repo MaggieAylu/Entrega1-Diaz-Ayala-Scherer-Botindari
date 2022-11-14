@@ -1,0 +1,48 @@
+{% extends "Producto/layout.html" %}
+
+{% block content %}    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+</head>
+<body>
+<h1>Perfil</h1>
+<p>
+    <li>
+        {% if request.user.extensionusuario.avatar %}
+        <img src={{request.user.extensionusuario.avatar.url}} alt="">
+        {% else %}
+        imagen no cargada
+        {% endif %}
+    </li>
+</p>
+<p>
+    <li>Nombre: {{request.user.first_name}} </li>
+    <li>Apellido: {{request.user.last_name}}</li>
+    <li>Email: {{request.user.email}}</li>
+</p>
+
+<p>
+    <style>    a {
+                          
+        text-align: center;
+        background: none;
+        font-size: 15px;
+        
+     } </style>  
+    <a href={% url 'editar_perfil'%}>Editar información</a>
+</p>
+<p>
+    <a href={% url 'cambiar_contrasenia'%}>Cambiar contraseña</a>
+</p>
+<p>
+    <a href={% url 'chats'%}>Mensajeria</a>
+</p>
+</body>
+</html>
+{% endblock %}
