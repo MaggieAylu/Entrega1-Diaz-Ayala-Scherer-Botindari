@@ -16,7 +16,7 @@
       -Búsqueda de producto en particular
       -Botón de Ver para mas información + edición o eliminación de datos
 9. Página de cargar producto
-      -Poner nombre, autor, resumen, blogpost, imagen y status y fecha de creación
+      -Poner nombre, autor, resumen, blogpost, imagen, status y fecha de creación
 10. Página ¿Quiénes somos?
       -Breve introducción del porque creamos el blog
       -Informacion de los integrantes(redes, nombre, apellido, conocimientos, imagen)
