@@ -1,3 +1,7 @@
+Link del video: https://drive.google.com/file/d/1Vqp4yJtDBlPrLuDFD0YJBydC6O1jCyGg/view?usp=sharing
+(Error de la contraseña solucionado)
+
+Pasos a seguir para recorrer la web: 
 1. Activar entorno virtual
 2. Instalar requirements.txt
 3. Levantar servicio
