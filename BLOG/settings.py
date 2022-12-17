@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'Chat',
     'rest_framework',
     'channels',
-    'ckeditor'
+    'ckeditor',
+    'ckeditor_uploader'
 ]
 
 
@@ -141,3 +142,5 @@ CHANNEL_LAYERS = {
 		"BACKEND": "channels.layers.InMemoryChannelLayer"
 	}
 }
+
+CKEDITOR_UPLOAD_PATH = "ckeditor_uploads/"

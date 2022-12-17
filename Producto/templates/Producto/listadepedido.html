@@ -1,58 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
 </head>
-{% extends "Producto/layout.html" %}
 
+{% extends "Producto/layout.html" %}
 
 {% block content %}  
 
 <body>
-
     <header>
-    <br />
-    <h1 style="color:#00008B" class="text-center">Lista de productos</h1>
+         <br />
+            <h1 style="color:#00008B" class="text-center">Lista de productos</h1>
 
-    <form action={% url 'pedido' %} method="GET">
+        <form action={% url 'pedido' %} method="GET">
     
-        {{ formulario1 }}
+            {{ formulario1 }}
         
-        <button type="submit" class="btn btn-primary">Buscar</button>
-    </form>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
     
     </header>
 
     <div class="row">
                 {% if pedido %}
-                    {% for pedido in pedido %}
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card shadow border">
-                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                {% for pedido in pedido %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card shadow border">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
+                            </div>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ pedido.nombre }}</h5>
+                            <li>
+                                {% if pedido.banner %}
+                                <div><img src={{pedido.banner.url}} alt="" height=100>
+                                </div>
+                                {% endif %}
+                            </li>
                             <li>Autor: {{ pedido.author }}</li>
                             <li>Fecha de creación: {{ pedido.date_added }}</li>
-                            <div>{{ pedido.resumen }}</div>
+                            <div>{{ pedido.resumen }}
+                            </div>
                             <div class="card-text truncate-3">
                                 <a href="{% url 'view-post' pedido.id %}" class="btn btn-primary">VER</a>
                             </div>
-                                
-                            </div>
                     </div>
                 </div>
+    </div>
 
-                    {% endfor %}
+                {% endfor %}
                 {% else %}
-                    <p><font color='white'> No hay productos cargados hasta el momento </font></p>
+                    <p><font color='white'> 
+                        No hay productos cargados hasta el momento 
+                    </font></p>
                 {% endif %}
-            </tbody>
-        </table>
-    </section>
+
 </body>
 {% endblock %}

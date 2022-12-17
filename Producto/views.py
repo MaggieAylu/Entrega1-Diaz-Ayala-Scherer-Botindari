@@ -22,7 +22,7 @@ def AboutUs(request):
 def CargarProducto(request):
     if request.method == "POST":
         
-        formulario = FormularioPedido(request.POST)
+        formulario = FormularioPedido(request.POST, request.FILES)
         
         if formulario.is_valid():
             data = formulario.cleaned_data
@@ -71,11 +71,11 @@ def EliminarProducto(request, id):
 #Editar lista de productos
 class EditarProducto(LoginRequiredMixin,UpdateView):
     model = PedidoProducto
-    success_url = '/Producto/listadepedido.html'
+    success_url = '/pedido'
     template_name = 'Producto/editarproducto.html'
     fields = ['nombre','author','resumen','blog_post','banner']
 
-
+#Ver Post
 context = {
     'nombre' : 'Blog Site'}
 

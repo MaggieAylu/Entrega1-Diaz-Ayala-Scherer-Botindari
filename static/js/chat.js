@@ -12,7 +12,7 @@ function scrolltoend() {
 function send(sender, receiver, message) {
     $.post('/api/messages/', '{"sender": "'+ sender +'", "receiver": "'+ receiver +'","message": "'+ message +'" }', function (data) {
         console.log(data);
-        var box = text_box.replace('{sender}', "You");
+        var box = text_box.replace('{sender}', "Tú");
         box = box.replace('{message}', message);
         $('#board').append(box);
         scrolltoend();

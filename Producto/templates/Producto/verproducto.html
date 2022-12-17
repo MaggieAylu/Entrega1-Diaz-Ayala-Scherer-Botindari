@@ -1,5 +1,7 @@
+<head>
+    <title>Detalle de Producto</title>
+</head>
 {% extends "Producto/layout.html" %}
-
 
 {% block content %}  
 
@@ -11,10 +13,13 @@
                     <h4 class="card-title fw-bold"></h4>
                 </div>
                 <div class="card-body">
+                    {% if pedido.banner %}
+                    <div><img src={{pedido.banner.url}} alt="" height=100></div>
+                    {% endif %}
                     <h4 class="fw-bolder mt-4 text-start">{{ pedido.nombre }}</h4>
                     <hr>
                     <div class="lh-1 text-start">
-                        
+
                         <span class="me-5"><small>Autor: <b>{{ pedido.author }}</b></small></span>
                         <span><small><i class="fa fa-calendar-day"></i> Publicado: <b>{{ pedido.date_added|date:"F d, Y h:i A" }}</b></small></span>
 
