@@ -31,8 +31,8 @@ def chat_view(request):
     if not request.user.is_authenticated:
         return redirect('login')
     if request.method == "GET":
-        return render(request, 'Chat/chat.html',
-                      {'user': User.objects.exclude(username=request)})
+        return render(request, 'chat/chat.html',
+                      {'user': User.objects.exclude(username=request.user.username)})
 
 
 def message_view(request, sender, receiver):
@@ -43,4 +43,4 @@ def message_view(request, sender, receiver):
                       {'user': User.objects.exclude(username=request.user.username),
                        'receiver': User.objects.get(id=receiver),
                        'message': Message.objects.filter(sender_id=sender, receiver_id=receiver) |
-                                  Message.objects.filter(sender_id=receiver, receiver_id=sender)})
+                                   Message.objects.filter(sender_id=receiver, receiver_id=sender)})
