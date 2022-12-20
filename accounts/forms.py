@@ -15,7 +15,8 @@ class FormularioRegistro(UserCreationForm):
         
         
 class FormularioEditarPerfil(forms.Form):
-    email= forms.CharField()
-    first_name= forms.CharField()
-    last_name= forms.CharField(required=False)
+    email = forms.CharField()
+    first_name = forms.CharField()
+    last_name = forms.CharField(required=False)
     avatar = forms.ImageField(required=False)
+    descripcion = forms.CharField()

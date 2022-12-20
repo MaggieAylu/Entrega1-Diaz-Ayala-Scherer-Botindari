@@ -56,10 +56,10 @@ def VerPedido(request):
     
     formulario1 = FomularioBusqueda()
     
-    template = loader.get_template('Producto/listadepedido.html')
-    render_template = template.render({'pedido': pedido, 'formulario1': formulario1})
-    return HttpResponse(render_template)
-
+    # template = loader.get_template('Producto/listadepedido.html')
+    # render_template = template.render({'pedido': pedido, 'formulario1': formulario1})
+    # return HttpResponse(render_template)
+    return render(request, 'Producto/listadepedido.html',{'pedido': pedido,'formulario1':formulario1})
 
 #Eliminar de la lista
 @login_required

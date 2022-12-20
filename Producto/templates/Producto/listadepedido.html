@@ -3,7 +3,6 @@
 </head>
 
 {% extends "Producto/layout.html" %}
-
 {% block content %}  
 
 <body>
@@ -21,39 +20,39 @@
     </header>
 
     <div class="row">
-                {% if pedido %}
-                {% for pedido in pedido %}
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card shadow border">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
-                            </div>
+            {% if pedido %}
+            {% for pedido in pedido %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card shadow border">
+                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title">{{ pedido.nombre }}</h5>
-                            <li>
-                                {% if pedido.banner %}
-                                <div><img src={{pedido.banner.url}} alt="" height=100>
-                                </div>
-                                {% endif %}
-                            </li>
-                            <li>Autor: {{ pedido.author }}</li>
-                            <li>Fecha de creación: {{ pedido.date_added }}</li>
-                            <div>{{ pedido.resumen }}
-                            </div>
-                            <div class="card-text truncate-3">
-                                <a href="{% url 'view-post' pedido.id %}" class="btn btn-primary">VER</a>
-                            </div>
                     </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ pedido.nombre }}</h5>
+                        <li>
+                            {% if pedido.banner %}
+                            <div><img src={{pedido.banner.url}} alt="" height=100>
+                            </div>
+                            {% endif %}
+                        </li>
+                        <li>Autor: {{ pedido.author }}</li>
+                        <li>Fecha de creación: {{ pedido.date_added }}</li>
+                        <div>{{ pedido.resumen }}
+                        </div>
+                        <div class="card-text truncate-3">
+                            <a href="{% url 'view-post' pedido.id %}" class="btn btn-primary">VER</a>
+                        </div>
                 </div>
+            </div>
     </div>
 
-                {% endfor %}
-                {% else %}
-                    <p><font color='white'> 
-                        No hay productos cargados hasta el momento 
-                    </font></p>
-                {% endif %}
+            {% endfor %}
+            {% else %}
+                <p><font color='white'> 
+                    No hay productos cargados hasta el momento 
+                </font></p>
+            {% endif %}
 
 </body>
 {% endblock %}

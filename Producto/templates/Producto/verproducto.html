@@ -28,8 +28,8 @@
                     <div>{{ pedido.resumen|safe }}</div>
                     <div>{{ pedido.blog_post|safe }}</div>
 
-                <a href="{% url 'eliminar_producto' pedido.id %}"class="btn btn-primary">Borrar</a>
-                <a href="{% url 'editar_producto' pedido.id %}"class="btn btn-primary">Editar</a>
+                    <a href="{% url 'eliminar_producto' pedido.id %}"class="btn btn-primary">Borrar</a>
+                    <a href="{% url 'editar_producto' pedido.id %}"class="btn btn-primary">Editar</a>
 
                 </div>
             </div>

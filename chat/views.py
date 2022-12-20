@@ -43,4 +43,4 @@ def message_view(request, sender, receiver):
                       {'user': User.objects.exclude(username=request.user.username),
                        'receiver': User.objects.get(id=receiver),
                        'message': Message.objects.filter(sender_id=sender, receiver_id=receiver) |
-                                   Message.objects.filter(sender_id=receiver, receiver_id=sender)})
+                                  Message.objects.filter(sender_id=receiver, receiver_id=sender)})

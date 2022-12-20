@@ -53,7 +53,10 @@ def editar_perfil(request):
             request.user.first_name = data_nueva['first_name']
             request.user.last_name = data_nueva['last_name']
             request.user.email = data_nueva['email']
-            request.user.extensionusuario.avatar = data_nueva['avatar']
+            request.user.extensionusuario.descripcion = data_nueva['descripcion']
+            if (data_nueva['avatar']!=None):
+                request.user.extensionusuario.avatar = data_nueva['avatar']
+            
             request.user.extensionusuario.save()
             request.user.save()
             return redirect('perfil')

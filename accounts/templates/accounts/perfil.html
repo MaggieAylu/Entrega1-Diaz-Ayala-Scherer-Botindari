@@ -21,7 +21,15 @@
     <li>Apellido: {{request.user.last_name}}</li>
     <li>Email: {{request.user.email}}</li>
 </p>
-
+<p>
+    <li>
+        {% if request.user.extensionusuario.descripcion %}
+            Descripción: {{ request.user.extensionusuario.descripcion }}
+        {% else %}
+            Descripción no disponible
+        {% endif %}
+    </li>
+</p>
 <p>
     <style>    a {
         font-size: 15px;
@@ -35,5 +43,5 @@
     <a href={% url 'chats'%}>Mensajeria</a>
 </p>
 </body>
-</html>
+
 {% endblock %}
